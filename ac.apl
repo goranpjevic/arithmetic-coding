@@ -54,8 +54,8 @@
     ⎕←'usage:'
     ⎕←'  ac.apl [option] [filename]'
     ⎕←'options:'
-    ⎕←'  e : encode'
-    ⎕←'  d : decode'
+    ⎕←'  e : encode a file'
+    ⎕←'  d : decode a file'
 ∇
 
 ∇ main args
