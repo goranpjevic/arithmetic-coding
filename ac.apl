@@ -5,7 +5,7 @@
   number_of_bits←32
   i←2⊥¨i⊆⍨(≢i)⍴⊃,/number_of_bits⍴¨⍳⌈number_of_bits÷⍨≢i
   ⍝ frequency table
-  t←tt,⍪((+\-⊢)f),⍪+\f←2⌷[2]tt←({⍺(≢⍵)}⌸i)
+  t←tt,⍪((+\-⊢),(⍪+\))2⌷[2]tt←({⍺(≢⍵)}⌸i)
   lower_bound←0
   upper_bound←¯1+2*number_of_bits-1
   second_quarter←2÷⍨upper_bound+1
