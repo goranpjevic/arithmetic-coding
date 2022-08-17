@@ -2,6 +2,10 @@
 
 compress and decompress files with arithmetic coding.
 
+note:
+
+a 32-bit encoder is implemented.
+
 usage:
 
   ac.apl [option] [filename]
