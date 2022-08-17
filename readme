@@ -8,7 +8,7 @@ a 32-bit encoder is implemented.
 
 usage:
 
-  ac.apl [option] [filename]
+  ac.apl [option] [input_filename] [output_filename]
 
 options:
 
