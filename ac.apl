@@ -55,10 +55,10 @@
   i←11 ¯1⎕map filename
   number_of_bits←2⊥32↑i
   number_of_unique_codes←2⊥number_of_bits↑32↓i
-  t_bits←(number_of_unique_codes×number_of_bits×4)↑(32+number_of_bits)↓i
+  t_bits←(number_of_unique_codes×number_of_bits×2)↑(32+number_of_bits)↓i
   t_numbers←2⊥¨t_bits⊆⍨(≢t_bits)⍴⊃,/number_of_bits⍴¨⍳⌈number_of_bits÷⍨≢t_bits
-  t←number_of_unique_codes 4⍴t_numbers
-  i↓⍨←32+number_of_bits+number_of_unique_codes×number_of_bits×4
+  t←tt,⍪((+\-⊢),(⍪+\))2⌷[2]tt←number_of_unique_codes 2⍴t_numbers
+  i↓⍨←32+number_of_bits+number_of_unique_codes×number_of_bits×2
   input_array←2⊥(number_of_bits-1)↑i
   i↓⍨←number_of_bits-1
   i,←number_of_bits⍴0
@@ -119,7 +119,7 @@
     encode¨i
     endencode
     o←(4⊃args)(⎕ncreate⍠'IfExists' 'Replace')0
-    output_bits←res,⍨((32⍴2)⊤number_of_bits),⊃,/(number_of_bits⍴2)∘⊤¨(≢t),,t
+    output_bits←res,⍨((32⍴2)⊤number_of_bits),⊃,/(number_of_bits⍴2)∘⊤¨(≢t),,2↑[2]t
     output_bits⎕nappend o 11
   :elseif'd'=2⊃args
     initdecode 3⊃args
